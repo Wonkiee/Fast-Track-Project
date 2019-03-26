@@ -1,0 +1,54 @@
+<html>
+    <title>Account</title>    
+
+<head>
+    <!-- Inlcude JavaScript files -->
+    <script type = "text/javascript" src="../javaScript/signUp.js"></script>
+    <script type = "text/javascript" src="../javaScript/signIn.js"></script>
+    <script type = "text/javascript" src="../javaScript/clearField.js"></script>
+
+    <!-- Inlcude CSS files -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+</head>
+
+<body>
+    <div class = "header">
+        <h1>Account</h1>
+    </div>    
+
+    <div style = "text-align: center">
+        <div>
+            <button class = "button" onclick="clearField('signIn')"> Sign In </button>
+            <button class = "button" onclick="clearField('signUp')"> Sign Up </button>
+        </div>
+            
+        <div id="signIn" class="account">
+            <h3> Sign In </h3>
+            <h2>User Name</h2>
+            <p><input type="text" id="userName_signIn" style="align-self: auto;"> </p>
+            <h2>Password</h2>
+            <p><input type="password" id="password_signIn" style = "margin-right: auto"> </p>
+            <button class = "button" onclick="signIn()">Submit</button>
+    
+        </div>
+            
+        <div id="signUp"  class = "account" style="display:none">
+            <h3>Sign Up</h3>
+            <h2>Name</h2>
+            <p><input type = "text" id = "name" required> </p>
+            <h2>User Name</h2>
+            <p><input type = "text" id = "userName" required> </p>
+            <h2>Email</h2>
+            <p><input type = "text" id = "email" required> </p>
+            <h2>Password</h2> 
+            <p><input type = "password" id = "password" required></p>
+            <h2>Re-Enter The Password</h2> 
+            <p><input type = "password" id = "rePassword" required></p>
+            <button class = "button" onclick="signUp()">Submit</button>
+            
+        </div>
+          
+    </div>
+</body>
+</html>
