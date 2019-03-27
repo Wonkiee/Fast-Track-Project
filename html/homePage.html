@@ -6,6 +6,9 @@
   <head>
     <!-- Inlcude CSS files -->
     <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Inlcude JavaScript files -->
+    <script type = "text/javascript" src="../javaScript/dbHandleForAdminPage.js"></script>
   </head>
 
   <!-- Display the header -->
@@ -15,25 +18,26 @@
     <img src="../images/syscoLABS.png"  />
   </div>
 
-  <!-- Display the navigation bar -->
+
+  <script>insertBrandsToList()</script>
+
+  <!-- Display the navigation bar dynamiclly-->
   <div class="topnav">
       <a class="active" href="#home">Home</a>
-      <a href="#news">Apple</a>
-      <a href="#contact">Samsung</a>
-      <a href="#about">Huawei</a>
-      <a href="#about">One Plus</a>
-      <a href="#about">Nokia</a>
-      <a href="#about">Sony</a>
-      <a href="#about">OPPO</a>
-      <a href="#about">Xiomi</a>
-      <a href="#about">Lenovo</a>
-      <a href="#about">My Account</a>
+      <script>
+        for(var i = 0; i < 10; i++){
+          var brand = retrieveBrands(i);
+          document.write("<a href=\"#onePuls\">"+brand+"</a>");
+        }
+      </script>
+      <a href="account.html">Account</a>
   </div>
-    
+   
   <div style="padding-left:16px">
-      <h2>Top Navigation Example</h2>
-      <p>Some content..</p>
+      <h2>Home page</h2>
+      <p>bla bla bla..</p>
   </div>
 
+  
 </html>
 

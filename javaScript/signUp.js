@@ -6,9 +6,14 @@ function signUp(){
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
     var rePassword = document.getElementById("rePassword").value;
-    document.write("Details Entered");
-    document.write(name," ",userName);
 
+    //These data should be sent to DB
+    
+    //if(name == "" || userName == "" || email == "" || password == "" || rePassword == ""){
+    //    alert("Please Fill The Missing Fields!");
+    //    return;
+    //}
+    document.write("Account Created");
 
 }
 
@@ -20,3 +25,4 @@ function clearField(tabName) {
     }
     document.getElementById(tabName).style.display = "block";  
 }
+

@@ -1,0 +1,72 @@
+<html>
+    <title>Account</title>    
+
+<head>
+    <!-- Inlcude JavaScript files -->
+
+    <script type = "text/javascript" src="../javaScript/clearField.js"></script>
+    <script type = "text/javascript" src="../javaScript/users.js"></script>
+
+    <!-- Inlcude CSS files -->
+    <link rel="stylesheet" href="../css/styles.css">
+    
+
+</head>
+
+<body>
+    <div class = "header">
+        <h1>Account</h1>
+    </div>    
+
+    <div style = "text-align: left">
+        <div>
+            <button class = "btn" onclick="clearField('summary')"> Summary </button>
+            <button class = "btn" onclick="clearField('cart')"> Cart </button>
+            <button class = "btn" onclick="clearField('purchased')"> Purchased </button>
+            <button class = "btn" onclick="clearField('settings')"> Account Settings </button>
+        </div>
+        
+         <!-- Display Summary-->
+        <div autocomplete= "off" id="summary" class="account">
+            <h3> Account Summary </h3>
+            <!-- Call a JS method to display the summary of teh account-->
+            <h2>User Name </h2>
+            <h2>Name</h2>
+            <h2>Email</h2>
+            <h2>Name</h2>
+        </div>
+
+         <!-- Display Cart-->
+        <div id="cart"  class = "account" style="display:none">
+            <h3> Cart</h3>
+            <!-- Call a JS method to display the items in cart-->
+            <h2>Item 1 <button class = "btn" onclick="onClickBuyItem()"> Buy Item </button> </h2>    
+        </div>
+
+         <!-- Display Purchases-->
+        <div autocomplete= "off" id="purchased"  class = "account" style="display:none">
+                <h3>Purchased Items</h3>  
+                <!-- Call a JS method to display purchased items in-->
+        </div>
+
+        <!-- Display Settings-->
+        <div id="settings"  class = "account" style="display:none">
+            <h3>Account Settings</h3>
+                
+            <p><button class = "btn"  id = "btn_newUserName" onclick="onClickChangeUserName()">Change User Name</button></p>
+            <input type="text" id = "txt_newUserName" style="display:none">
+             <p><button class = "btn"  id = "btn_submitNewUserName" onclick="submitNewUserName('txt_newUserName')" style="display:none ; text-align: center">Submit Brand</button></p>
+ 
+            <p><button class = "btn" id = "btn_newPassword" onclick="onClickChangePassword()">Change Password</button> </p>
+            <input type="text" id = "txt_newPassword" style="display:none">
+            <p><button class = "btn"  id = "btn_submitNewPassword" onclick="submitNewPassword('txt_newPassword')" style="display:none ; text-align: center">Submit Phone</button></p>
+            <input type="text" hidden>
+                
+        </div>
+          
+    </div>
+
+
+    
+</body>
+</html>

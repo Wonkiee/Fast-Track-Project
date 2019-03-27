@@ -1,15 +1,16 @@
 <html>
-    <title>Account</title>    
+    <title>Admin</title>    
+
 <head>
-    <style> 
-        .header {
-        padding: 0.5px;
-        text-align: center;
-        background: #1abc9c;
-        color: white;
-        font-size: 30px;
-    }
-    </style>
+    <!-- Inlcude JavaScript files -->
+    <script type = "text/javascript" src="../javaScript/signUp.js"></script>
+    <script type = "text/javascript" src="../javaScript/signIn.js"></script>
+    <script type = "text/javascript" src="../javaScript/clearField.js"></script>
+    <script type = "text/javascript" src="../javaScript/dbHandleForAdminPage.js"></script>
+    
+    <!-- Inlcude CSS files -->
+    <link rel="stylesheet" href="../css/styles.css">
+
 </head>
 
 <body>
@@ -17,8 +18,36 @@
         <h1>Admin Account</h1>
     </div>
 
+    <div style = "text-align: center">
+        <h3>Brands Available</h3    >
+
+    <!-- Display available brands -->
+    <div class='topnav' id = 'navBar'>
+        <script>
+            for(var i = 0; i < returnArrayLenth(); i++){
+            var brand = retrieveBrands(i);
+            //document.write("<button class = \"btn\" onclick=\"displayPhoneDetails("+brand+")\">"+ brand+" </btn>");
+            document.write("<button class = \"btn\" id = "+brand+" "+"onclick = \"onclickBrand(id)\" >"+ brand+" </btn>");
+            }
+        </script>
+    </div> 
+    <!-- This is used to display the brand details -->
+    <div id="displayDetails">
+    </div>
 
 
+    <div style = "text-align: center">
+        <p><button class = "btn"  id = "addBrand" onclick="addBrand(id)">Add Brand</button></p>
+        <input type="text" id = "txt_addBrand" style="display:none">
+        <p><button class = "btn"  id = "btn_addBrand" onclick="submitBrand('txt_addBrand')" style="display:none ; text-align: center">Submit Brand</button></p>
+    </div>
+
+    <div >
+        <p><button class = "btn" id = "addPhone" onclick="addPhone(id)">Add Phone</button> </p>
+        <input type="text" id = "txt_addPhone" style="display:none">
+        <p><button class = "btn"  id = "btn_addPhone" onclick="submitPhone('txt_addPhone')" style="display:none ; text-align: center">Submit Phone</button></p>
+        <input type="text" hidden>
+    </div>
 </body>
 
 </html>

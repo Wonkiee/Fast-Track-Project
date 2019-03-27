@@ -23,17 +23,17 @@
             <button class = "button" onclick="clearField('signUp')"> Sign Up </button>
         </div>
             
-        <div id="signIn" class="account">
+        <form autocomplete= "off" id="signIn" class="account">
             <h3> Sign In </h3>
-            <h2>User Name</h2>
-            <p><input type="text" id="userName_signIn" style="align-self: auto;"> </p>
+            <h2> User Name </h2>
+            <p><input type = "text" id="userName_signIn" style="align-self: auto;" required> </p>
             <h2>Password</h2>
-            <p><input type="password" id="password_signIn" style = "margin-right: auto"> </p>
+            <p><input type="password" id="password_signIn" style = "margin-right: auto" required> </p>
             <button class = "button" onclick="signIn()">Submit</button>
     
-        </div>
+        </form>
             
-        <div id="signUp"  class = "account" style="display:none">
+        <form autocomplete= "off" id="signUp"  class = "account" style="display:none">
             <h3>Sign Up</h3>
             <h2>Name</h2>
             <p><input type = "text" id = "name" required> </p>
@@ -47,8 +47,11 @@
             <p><input type = "password" id = "rePassword" required></p>
             <button class = "button" onclick="signUp()">Submit</button>
             
-        </div>
+        </form>
           
     </div>
+
+
+    
 </body>
 </html>
