@@ -9,6 +9,7 @@
 
     <!-- Inlcude JavaScript files -->
     <script type = "text/javascript" src="../javaScript/dbHandleForAdminPage.js"></script>
+ 
   </head>
 
   <!-- Display the header -->
@@ -18,21 +19,39 @@
     <img src="../images/syscoLABS.png"  />
   </div>
 
-
+  
   <script>insertBrandsToList()</script>
 
+  
+  <div class="container">
+  <div class="btn-group">
+    <button class="btn_">Home</button>
+    <script>
+      for(var i = 0; i < 8; i++){
+        var brand = retrieveBrands(i);
+        document.write( '<button class="btn_">'+brand+'</button>');
+      }
+    </script>
+    <button class="btn_">Account</button>
+  </div>
+</div>
+
+
   <!-- Display the navigation bar dynamiclly-->
+
+  <!--
   <div class="topnav">
       <a class="active" href="#home">Home</a>
       <script>
         for(var i = 0; i < 10; i++){
           var brand = retrieveBrands(i);
-          document.write("<a href=\"#onePuls\">"+brand+"</a>");
+          document.write('<a href='+'brand.html'+'>'+brand+'</a>');
         }
       </script>
       <a href="account.html">Account</a>
   </div>
-   
+
+-->
   <div style="padding-left:16px">
       <h2>Home page</h2>
       <p>bla bla bla..</p>

@@ -1,5 +1,5 @@
 <html>
-    <title>Account</title>    
+    <title>User Account</title>    
 
 <head>
     <!-- Inlcude JavaScript files -->
@@ -50,18 +50,19 @@
         </div>
 
         <!-- Display Settings-->
-        <div id="settings"  class = "account" style="display:none">
+        <div id="settings"  class = "account" style="display:none" >
             <h3>Account Settings</h3>
-                
-            <p><button class = "btn"  id = "btn_newUserName" onclick="onClickChangeUserName()">Change User Name</button></p>
-            <input type="text" id = "txt_newUserName" style="display:none">
-             <p><button class = "btn"  id = "btn_submitNewUserName" onclick="submitNewUserName('txt_newUserName')" style="display:none ; text-align: center">Submit Brand</button></p>
- 
-            <p><button class = "btn" id = "btn_newPassword" onclick="onClickChangePassword()">Change Password</button> </p>
-            <input type="text" id = "txt_newPassword" style="display:none">
-            <p><button class = "btn"  id = "btn_submitNewPassword" onclick="submitNewPassword('txt_newPassword')" style="display:none ; text-align: center">Submit Phone</button></p>
-            <input type="text" hidden>
-                
+            <form>
+                <p><button class = "button"  id = "btn_newUserName" onclick="onClickChangeUserName()">Change User Name</button></p>
+                <input type="text" id = "txt_newUserName" style="display:none" required/>
+                <p><button class = "button"  id = "btn_submitNewUserName" onclick="submitNewUserName('txt_newUserName')" style="display:none ; text-align: center">Submit</button></p>
+            
+
+                <p><button class = "button" id = "btn_newPassword" onclick="onClickChangePassword()">Change Password</button> </p>
+                <input type="text" id = "txt_newPassword" style="display:none" required>
+                <p><button class = "button"  id = "btn_submitNewPassword" onclick="submitNewPassword('txt_newPassword')" style="display:none ; text-align: center">Submit</button></p>
+                <input type="text" hidden>
+            </form>
         </div>
           
     </div>

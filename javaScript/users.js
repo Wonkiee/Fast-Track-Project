@@ -8,7 +8,11 @@ function detailsForSummaryPage(){
 
 //Display details for "Cart" page
 function detailsForCartPage(){
-
+    var para = document.getElementById("cart");
+    //var item = '<h2>Item asdada <button class = "btn" onclick="onClickBuyItem()"> Buy Item </button> </h2>'
+    var node = document.createElement("button");
+    //var node = document.createTextNode("button");
+    para.appendChild(node);
 }
 
 //Display Purchased items in "Purchased" page
@@ -26,6 +30,7 @@ function onClickBuyItem(){
 }
 
 function onClickChangeUserName(id){
+    detailsForCartPage();
     var textBox = document.getElementById("txt_newPassword");
     var button = document.getElementById("btn_submitNewPassword");
     textBox.style.display = "none";
@@ -50,8 +55,18 @@ function onClickChangePassword(){
 
 function submitNewUserName(newUserName){
     var newUserName = document.getElementById(newUserName).value;
+    if(newUserName == ""){
+        alert("Please fil the empty fields!");
+        return;
+    }
+    document.write(newUserName);
 }
 
 function submitNewPassword(newPassword){
-    var newPassword = document.getElementById(newPassword).value;    
+    var newPassword = document.getElementById(newPassword).value;  
+    if(newPassword == ""){
+        alert("Please fil the empty fields!");
+        return;
+    }  
+    document.write(newPassword);
 }

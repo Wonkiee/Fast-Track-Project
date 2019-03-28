@@ -28,16 +28,17 @@ function insertBrandsToList(){
     phoneBrands.push("Panasonic");
     phoneBrands.push("BlackBerry");
     phoneBrands.push("Dialog");
-
 }
 
 //Retrieve the brands from the list
-function retrieveBrands(index){
+var retBrands = function retrieveBrands(index){
+    if(index < 0 || index >= phoneBrands.length)
+        return;
     return phoneBrands[index];
 }
 
 //returns the number of brands available
-function returnArrayLenth(){
+module.exports = function returnArrayLenth(){
     return phoneBrands.length;
 }
 
@@ -106,6 +107,3 @@ function submitPhone(textBoxId){
     var phoneModelName = document.getElementById(textBoxId).value;
     phoneDetails[phoneModelName] = "newPhoneModel" ;
 }
-
-
-

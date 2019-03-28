@@ -9,10 +9,10 @@ function signUp(){
 
     //These data should be sent to DB
     
-    //if(name == "" || userName == "" || email == "" || password == "" || rePassword == ""){
-    //    alert("Please Fill The Missing Fields!");
-    //    return;
-    //}
+    if(name == "" || userName == "" || email == "" || password == "" || rePassword == ""){
+        alert("Please Fill The Missing Fields!");
+        return;
+    }
     document.write("Account Created");
 
 }

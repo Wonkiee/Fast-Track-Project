@@ -8,6 +8,10 @@ function signIn(){
     var name = document.getElementById("userName_signIn").value;
     var password = document.getElementById("password_signIn").value;    
 
+    if(name == "" || password == ""){
+        alert("Please fill the empty fields!");
+        return;
+    }
     if(name == "admin" && password == "admin"){
         var href = "../html/admin.html";
         window.open(href);
