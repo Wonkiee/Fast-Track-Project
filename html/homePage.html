@@ -1,14 +1,14 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 
   <title> "No one's Mobile Phone Shop" </title>
   
   <head>
     <!-- Inlcude CSS files -->
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 
     <!-- Inlcude JavaScript files -->
-    <script type = "text/javascript" src="../javaScript/dbHandleForAdminPage.js"></script>
+    <script type = "text/javascript" src="/javaScript/dbHandleForAdminPage.js"></script>
  
   </head>
 
@@ -20,19 +20,24 @@
   </div>
 
   
-  <script>insertBrandsToList()</script>
+  <script>
+    var dbHandle = new dbHandleForAdminPage();
+    dbHandle.insertBrandsToList()
+  </script>
 
-  
   <div class="container">
   <div class="btn-group">
     <button class="btn_">Home</button>
     <script>
+      //var dbHandle = new dbHandleForAdminPage();
+      var brand;
       for(var i = 0; i < 8; i++){
-        var brand = retrieveBrands(i);
+        brand = dbHandle.retrieveBrands(i);
         document.write( '<button class="btn_">'+brand+'</button>');
       }
     </script>
-    <button class="btn_">Account</button>
+    <form action = 'signIn.html'> <button class="btn_">Sign In</button> </form>
+    <form action = 'signUp.html'>  <button class="btn_">Sign Up</button> </form>
   </div>
 </div>
 
@@ -59,4 +64,3 @@
 
   
 </html>
-

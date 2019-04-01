@@ -6,10 +6,10 @@
 
     <script type = "text/javascript" src="../javaScript/clearField.js"></script>
     <script type = "text/javascript" src="../javaScript/users.js"></script>
+    <script type = "text/javascript" src="../javaScript/signIn.js"></script>
 
     <!-- Inlcude CSS files -->
     <link rel="stylesheet" href="../css/styles.css">
-    
 
 </head>
 
@@ -29,8 +29,8 @@
          <!-- Display Summary-->
         <div autocomplete= "off" id="summary" class="account">
             <h3> Account Summary </h3>
-            <!-- Call a JS method to display the summary of teh account-->
-            <h2>User Name </h2>
+            <!-- Call a JS method to display the summary of the account-->
+            <h2>User Name</h2>
             <h2>Name</h2>
             <h2>Email</h2>
             <h2>Name</h2>
@@ -57,7 +57,6 @@
                 <input type="text" id = "txt_newUserName" style="display:none" required/>
                 <p><button class = "button"  id = "btn_submitNewUserName" onclick="submitNewUserName('txt_newUserName')" style="display:none ; text-align: center">Submit</button></p>
             
-
                 <p><button class = "button" id = "btn_newPassword" onclick="onClickChangePassword()">Change Password</button> </p>
                 <input type="text" id = "txt_newPassword" style="display:none" required>
                 <p><button class = "button"  id = "btn_submitNewPassword" onclick="submitNewPassword('txt_newPassword')" style="display:none ; text-align: center">Submit</button></p>

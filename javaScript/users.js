@@ -1,9 +1,25 @@
-// To store user/admin data for from database
+// To store user data for from database
 var userDetails = {};
 var adminDetails = {};
 
+document.write(userSignedIn.getUserName());
 function detailsForSummaryPage(){
     var userName,name,email;
+    
+    //Retrieve User Details from DB
+    fetch('http://localhost:8000/db/userdetails', {
+        method: "get",
+        mode: 'cors',
+        headers:{
+            'Accept': 'application/json',
+            'Access-Control-Allow-Origin':'*',
+            'Content-Type': 'application/json'
+        }
+    }).then(function(response){
+        console.log(response.body);
+    }).catch(function (error){
+        console.log(error);
+    })
 }
 
 //Display details for "Cart" page
@@ -13,11 +29,39 @@ function detailsForCartPage(){
     var node = document.createElement("button");
     //var node = document.createTextNode("button");
     para.appendChild(node);
+
+    //Retrieve Cart Details from DB
+    fetch('http://localhost:8000/db/cart', {
+        method: "get",
+        mode: 'cors',
+        headers:{
+            'Accept': 'application/json',
+            'Access-Control-Allow-Origin':'*',
+            'Content-Type': 'application/json'
+        }
+    }).then(function(response){
+        console.log(response.body);
+    }).catch(function (error){
+        console.log(error);
+    })
 }
 
 //Display Purchased items in "Purchased" page
 function detailsForPurchasedPage(){
-    
+    //Retrieve Purchased Details from DB
+    fetch('http://localhost:8000/db/purchased', {
+        method: "get",
+        mode: 'cors',
+        headers:{
+            'Accept': 'application/json',
+            'Access-Control-Allow-Origin':'*',
+            'Content-Type': 'application/json'
+        }
+    }).then(function(response){
+        console.log(response.body);
+    }).catch(function (error){
+        console.log(error);
+    })
 }
 
 function detailsForAccountSettingsPage(){
@@ -30,7 +74,7 @@ function onClickBuyItem(){
 }
 
 function onClickChangeUserName(id){
-    detailsForCartPage();
+    //detailsForCartPage();
     var textBox = document.getElementById("txt_newPassword");
     var button = document.getElementById("btn_submitNewPassword");
     textBox.style.display = "none";
@@ -52,14 +96,30 @@ function onClickChangePassword(){
     document.getElementById("btn_submitNewPassword").style.display='block';
 }
 
-
 function submitNewUserName(newUserName){
     var newUserName = document.getElementById(newUserName).value;
     if(newUserName == ""){
         alert("Please fil the empty fields!");
         return;
     }
-    document.write(newUserName);
+    
+    newUserNameJSON = {'newUserName':newUserName};  
+    fetch('http://localhost:8000/db/changeusername', {
+        method: "post",
+        body: JSON.stringify(newUserNameJSON),
+        mode: 'cors',
+        headers:{
+            'Accept': 'application/json',
+            'Access-Control-Allow-Origin':'*',
+            'Content-Type': 'application/json'
+        }
+    }).then(function(response){
+        console.log(response.body);
+    }).catch(function (error){
+        console.log(error);
+    })
+
+    //document.write(newUserName);
 }
 
 function submitNewPassword(newPassword){
@@ -68,5 +128,22 @@ function submitNewPassword(newPassword){
         alert("Please fil the empty fields!");
         return;
     }  
-    document.write(newPassword);
+
+    newPasswordJSON = {'newPassword':newPassword};  
+    fetch('http://localhost:8000/db/changepassword', {
+        method: "post",
+        body: JSON.stringify(newPasswordJSON),
+        mode: 'cors',
+        headers:{
+            'Accept': 'application/json',
+            'Access-Control-Allow-Origin':'*',
+            'Content-Type': 'application/json'
+        }
+    }).then(function(response){
+        console.log(response.body);
+    }).catch(function (error){
+        console.log(error);
+    })
+
+    //document.write(newPassword);
 }

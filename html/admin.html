@@ -7,7 +7,7 @@
     <script type = "text/javascript" src="../javaScript/signIn.js"></script>
     <script type = "text/javascript" src="../javaScript/clearField.js"></script>
     <script type = "text/javascript" src="../javaScript/dbHandleForAdminPage.js"></script>
-    
+    <script>var dbHandle = new dbHandleForAdminPage();</script>
     <!-- Inlcude CSS files -->
     <link rel="stylesheet" href="../css/styles.css">
 
@@ -24,10 +24,14 @@
     <!-- Display available brands -->
     <div class='topnav' id = 'navBar'>
         <script>
-            for(var i = 0; i < returnArrayLenth(); i++){
-            var brand = retrieveBrands(i);
-            //document.write("<button class = \"btn\" onclick=\"displayPhoneDetails("+brand+")\">"+ brand+" </btn>");
-            document.write("<button class = \"btn\" id = "+brand+" "+"onclick = \"onclickBrand(id)\" >"+ brand+" </btn>");
+            dbHandle.insertBrandsToList();
+            //dbHandle.retrievePhoneDetails();
+            var brand;
+            for(var i = 0; i < dbHandle.returnArrayLenth(); i++){
+                brand = dbHandle.retrieveBrands(i);
+                dbHandle.retrievePhoneDetails();
+                //document.write("<button class = \"btn\" onclick=\"displayPhoneDetails("+brand+")\">"+ brand+" </btn>");
+                document.write("<button class = \"btn\" id = "+brand+" "+"onclick = \"dbHandle.onclickBrand(id)\" >"+ brand+" </btn>");
             }
         </script>
     </div> 
@@ -37,15 +41,15 @@
 
 
     <div style = "text-align: center">
-        <p><button class = "btn"  id = "addBrand" onclick="addBrand(id)">Add Brand</button></p>
+        <p><button class = "btn"  id = "addBrand" onclick="dbHandle.addBrand(id)">Add Brand</button></p>
         <input type="text" id = "txt_addBrand" style="display:none">
-        <p><button class = "btn"  id = "btn_addBrand" onclick="submitBrand('txt_addBrand')" style="display:none ; text-align: center">Submit Brand</button></p>
+        <p><button class = "btn"  id = "btn_addBrand" onclick="dbHandle.submitBrand('txt_addBrand')" style="display:none ; text-align: center">Submit Brand</button></p>
     </div>
 
     <div >
-        <p><button class = "btn" id = "addPhone" onclick="addPhone(id)">Add Phone</button> </p>
+        <p><button class = "btn" id = "addPhone" onclick="dbHandle.addPhone(id)">Add Phone</button> </p>
         <input type="text" id = "txt_addPhone" style="display:none">
-        <p><button class = "btn"  id = "btn_addPhone" onclick="submitPhone('txt_addPhone')" style="display:none ; text-align: center">Submit Phone</button></p>
+        <p><button class = "btn"  id = "btn_addPhone" onclick="dbHandle.submitPhone('txt_addPhone')" style="display:none ; text-align: center">Submit Phone</button></p>
         <input type="text" hidden>
     </div>
 </body>

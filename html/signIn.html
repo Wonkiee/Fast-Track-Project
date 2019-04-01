@@ -1,0 +1,35 @@
+<html>
+    <title>Sign In</title>    
+
+<head>
+    <!-- Inlcude JavaScript files -->
+    <script type = "text/javascript" src="../javaScript/signUp.js"></script>
+    <script type = "text/javascript" src="../javaScript/signIn.js"></script>
+    <script type = "text/javascript" src="../javaScript/clearField.js"></script>
+
+    <!-- Inlcude CSS files -->
+    <link rel="stylesheet" href="css/styles.css">
+    <script> 
+        var signIn = new SignIn();
+    </script>
+</head>
+
+<body>
+    <div class = "header">
+        <h1>Sign In</h1>
+    </div>    
+
+    <div style = "text-align: center">     
+        <div autocomplete= "off" id="signIn" class="account" >
+            <h3> Sign In </h3>
+            <h2> User Name </h2>
+            <p><input type = "text" name="userName" id="userName_signIn" style="align-self: auto;" required> </p>
+            <h2>Password</h2>
+            <p><input type="password" name="password" id="password_signIn" style = "margin-right: auto" required> </p>
+            <button class = "button" type onclick="signIn.signIn()">Submit</button>
+        </div>     
+    </div>
+
+
+</body>
+</html>

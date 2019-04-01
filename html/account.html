@@ -1,15 +1,20 @@
+<!-- 
+
 <html>
     <title>Sign In/Sign Up</title>    
 
 <head>
-    <!-- Inlcude JavaScript files -->
+     Inlcude JavaScript files
     <script type = "text/javascript" src="../javaScript/signUp.js"></script>
     <script type = "text/javascript" src="../javaScript/signIn.js"></script>
     <script type = "text/javascript" src="../javaScript/clearField.js"></script>
 
-    <!-- Inlcude CSS files -->
-    <link rel="stylesheet" href="../css/styles.css">
-
+     Inlcude CSS files 
+    <link rel="stylesheet" href="css/styles.css">
+    <script> 
+        var signUp = new SignUp(); 
+        var signIn = new SignIn();
+    </script>
 </head>
 
 <body>
@@ -22,18 +27,17 @@
             <button class = "button" onclick="clearField('signIn')"> Sign In </button>
             <button class = "button" onclick="clearField('signUp')"> Sign Up </button>
         </div>
-            
-        <form autocomplete= "off" id="signIn" class="account">
+        
+        <div autocomplete= "off" id="signIn" class="account" >
             <h3> Sign In </h3>
             <h2> User Name </h2>
-            <p><input type = "text" id="userName_signIn" style="align-self: auto;" required> </p>
+            <p><input type = "text" name="userName" id="userName_signIn" style="align-self: auto;" required> </p>
             <h2>Password</h2>
-            <p><input type="password" id="password_signIn" style = "margin-right: auto" required> </p>
-            <button class = "button" onclick="signIn()">Submit</button>
-    
-        </form>
+            <p><input type="password" name="password" id="password_signIn" style = "margin-right: auto" required> </p>
+            <button class = "button" type onclick="signIn.signIn()">Submit</button>
+        </div>
             
-        <div autocomplete= "off" id="signUp"  class = "account" style="display:none" aria-required="true">
+        <div autocomplete= "off" id="signUp"  class = "account" style="display:none" aria-required="true" action="/signup">
             <form>
             <h3>Sign Up</h3>
             <h2>Name</h2>
@@ -46,13 +50,13 @@
             <p><input type = "password" id = "password" required/></p>
             <h2>Re-Enter The Password</h2> 
             <p><input type = "password" id = "rePassword" required/></p>
-            <button class = "button" onclick="signUp()">Submit</button>
+            <button class = "button" onclick="signUp.signUp()">Submit</button>
             </form>
         </div>
           
     </div>
 
 
-    
 </body>
 </html>
+-->

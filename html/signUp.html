@@ -1,0 +1,43 @@
+<html>
+    <title>Sign Up</title>    
+
+<head>
+    <!-- Inlcude JavaScript files -->
+    <script type = "text/javascript" src="../javaScript/signUp.js"></script>
+    <script type = "text/javascript" src="../javaScript/clearField.js"></script>
+
+    <!-- Inlcude CSS files -->
+    <link rel="stylesheet" href="css/styles.css">
+    <script> 
+        var signUp = new SignUp(); 
+    </script>
+</head>
+
+<body>
+    <div class = "header">
+        <h1>Sign Up</h1>
+    </div>    
+
+    <div style = "text-align: center">
+            
+        <div autocomplete= "off" id="signUp"  class = "account" aria-required="true" >
+            <form>
+            <h3>Sign Up</h3>
+            <h2>Name</h2>
+            <p><input type = "text" id = "name" required/> </p>
+            <h2>User Name</h2>
+            <p><input type = "text" id = "userName" required/> </p>
+            <h2>Email</h2>
+            <p><input type = "text" id = "email" required> </p>
+            <h2>Password</h2> 
+            <p><input type = "password" id = "password" required/></p>
+            <h2>Re-Enter The Password</h2> 
+            <p><input type = "password" id = "rePassword" required/></p>
+            <button class = "button" onclick="signUp.signUp()">Submit</button>
+            </form>
+        </div>
+          
+    </div>
+
+</body>
+</html>
