@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
   <title> "No one's Mobile Phone Shop" </title>
@@ -22,17 +22,24 @@
   
   <script>
     var dbHandle = new dbHandleForAdminPage();
-    dbHandle.insertBrandsToList()
+    var phoneBrandsArr = [];
+
+    var promise = dbHandle.insertBrandsToList();
+    dbHandle.insertBrandsToList().then(function(value) {
+      for(var i = 0; i < value.length; i++){
+        phoneBrandsArr[i] = value[i];
+      }
+    }); 
   </script>
 
   <div class="container">
   <div class="btn-group">
     <button class="btn_">Home</button>
+    
     <script>
-      //var dbHandle = new dbHandleForAdminPage();
       var brand;
       for(var i = 0; i < 8; i++){
-        brand = dbHandle.retrieveBrands(i);
+        brand = phoneBrandsArr[i];
         document.write( '<button class="btn_">'+brand+'</button>');
       }
     </script>

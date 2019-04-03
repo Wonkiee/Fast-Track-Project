@@ -139,11 +139,16 @@ function submitNewPassword(newPassword){
             'Access-Control-Allow-Origin':'*',
             'Content-Type': 'application/json'
         }
-    }).then(function(response){
-        console.log(response.body);
-    }).catch(function (error){
-        console.log(error);
-    })
+    }).then(response => response.json())
+    .catch(error => console.error('Error:', error))
+    .then(response => console.log('Success:', JSON.stringify(response)));
+    
+    
+    // .then(function(response){
+    //     console.log(response.body);
+    // }).catch(function (error){
+    //     console.log(error);
+    // })
 
     //document.write(newPassword);
 }

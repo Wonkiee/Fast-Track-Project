@@ -28,12 +28,16 @@ class SignUp{
                 'Content-Type': 'application/json'
             }
         }).then(function(response){
-            if( response.status == 200 )
+            console.log("1");
+            if( response.status == "OK" ){
+                console.log(response.status);
                 redirect: window.location.replace("../html/user.html");
-            //return response.text;
+            }
         }).then(function(text){
+            console.log("2");
             console.log(text);
         }).catch(function (error){
+            console.log("3");
             console.log(error);
         })
             

@@ -1,3 +1,7 @@
+//Fetch API Details
+//https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+
+
 var phoneBrands = []; //array
 var phoneDetails = {}; //dictionary
 
@@ -14,46 +18,41 @@ class dbHandleForAdminPage {
         //insertBrandsToList();
     }
 
-
     //function to retrieve the brands to the list from database
     insertBrandsToList(){
 
-        fetch('http://localhost:8000/db/retrievebrands', {
-            method: "get",
-            mode: 'cors',
-            headers:{
-                'Accept': 'application/json',
-                'Access-Control-Allow-Origin':'*',
-                'Content-Type': 'application/json'
-            }
-        }).then(function(response){
-            console.log(response.body);
-        }).catch(function (error){
-            console.log(error);
-        })
-
-        //push data to this from DB
+        //return new Promise((resolve, reject) => {
+            fetch('http://localhost:8000/db/retrievebrands', {
+                method: "get",
+                mode: 'cors',
+                headers:{
+                    'Accept': 'application/json',
+                    'Access-Control-Allow-Origin':'*',
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(function(response){
+                console.log(response.length);
+                for(var i=0; i<response.length; i++){
+                    phoneBrands.push(JSON.stringify(response[i]));
+                    console.log(phoneBrands[i]);
+                }
+                //return resolve(phoneBrands);
+            })
+            .catch(error => {
+                console.log(error);
+                //return reject(error);
+            })
+        //});
         phoneBrands.push("Apple");
         phoneBrands.push("Samsung");
-        phoneBrands.push("One Plus");
-        phoneBrands.push("Huawei");
-        phoneBrands.push("Sony");
-        phoneBrands.push("LG");
-        phoneBrands.push("Nokia");
-        phoneBrands.push("Xiomi");
-        phoneBrands.push("OPPO");
-        phoneBrands.push("Lenovo");
-        phoneBrands.push("Asuz");
-        phoneBrands.push("Panasonic");
-        phoneBrands.push("BlackBerry");
-        phoneBrands.push("Dialog");
-        //retrievePhoneDetails();
-
+    
     }
 
     //Retrieve the brands from the list
     retrieveBrands(index){
-        if(index < 0 || index >= phoneBrands.length)
+        if(index < 0 /*|| index >= phoneBrands.length*/)
             return "Incorrect Index";
         return phoneBrands[index];
     }
@@ -87,9 +86,6 @@ class dbHandleForAdminPage {
             phoneDetails[this.retrieveBrands(i)] = [i] ;
     }
 
-    //insertBrandsToList();
-    //retrievePhoneDetails();
-
 
     //Admin Page
 
@@ -115,8 +111,10 @@ class dbHandleForAdminPage {
     addBrand(id){
         var textBox = document.getElementById("txt_addPhone");
         var button = document.getElementById("btn_addPhone");
+
         textBox.style.display = "none";
         button.style.display = "none";
+
 
         document.getElementById("txt_addBrand").style.display='block';
         document.getElementById("btn_addBrand").style.display='block';
@@ -148,14 +146,14 @@ class dbHandleForAdminPage {
                 'Access-Control-Allow-Origin':'*',
                 'Content-Type': 'application/json'
             }
-        }).then(function(response){
+        }).then( function(response){
             console.log(response.body);
         }).catch(function (error){
             console.log(error);
-        })
+        } )
 
         phoneBrands.push(brandName);
-        document.write(brandName);
+        //document.write(brandName);
     }
 
     //Submit the newly added phone model to DB
